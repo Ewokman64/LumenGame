@@ -21,6 +21,7 @@ public class playerMovement : MonoBehaviour
     private Animator anim;
     private playerJump pJ;
     private Rigidbody2D rb;
+    private bool isAttacking;
 
     #region Animation States
     private string currentState;
@@ -75,17 +76,17 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (gC.isGrounded() == false && rb.velocity.y != 0)
+        if (gC.isGrounded() == false && rb.velocity.y != 0 && isAttacking == false)
         {
-             ChangeAnimationState(PLAYER_JUMPING);
+            ChangeAnimationState(PLAYER_JUMPING);
 
         }
         //If not moving and is Grounded
-        if (moveInput == 0 && gC.isGrounded() && rb.velocity.y == 0)
+        if (moveInput == 0 && gC.isGrounded() && rb.velocity.y == 0 && isAttacking == false)
         {
             ChangeAnimationState(PLAYER_IDLE);
         }
-        if (gC.isGrounded() && moveInput != 0 && rb.velocity.y <= 0.1f)
+        if (gC.isGrounded() && moveInput != 0 && rb.velocity.y <= 0.1f && isAttacking == false)
         {
             ChangeAnimationState(PLAYER_WALKING);
         }
@@ -115,17 +116,35 @@ public class playerMovement : MonoBehaviour
 
         //play the animation
         anim.Play(newState);
-
         //reassign the current state
         currentState = newState;
     }
     #endregion
 
+    public void Attack(string attackState)
+    {
+        isAttacking = true;
+        ChangeAnimationState(attackState);
+    }
+
+    public void StopAttack()
+    {
+        isAttacking = false;
+    }
+
+    public void Jump()
+    {
+        if (!isAttacking)
+        {
+            ChangeAnimationState(PLAYER_JUMPING);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-       if (other.gameObject.tag == "Weapon")
+        if (other.gameObject.tag == "Weapon")
         {
             Destroy(other.gameObject);
-        } 
+        }
     }
 }

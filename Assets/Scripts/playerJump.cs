@@ -9,7 +9,7 @@ public class playerJump : MonoBehaviour
 
     private bool jumpIsPressed = false;
     public bool doubleJumpAvailable;
-    private Animator anim;
+    private playerMovement movement;
     private Rigidbody2D rigidbod;
     private groundCheckBox gC;
     private playerMovement pM;
@@ -22,7 +22,7 @@ public class playerJump : MonoBehaviour
     void Start()
     {
         gC = GetComponent<groundCheckBox>();
-        anim = GetComponent<Animator>();
+        movement = GetComponent<playerMovement>();
         rigidbod = GetComponent<Rigidbody2D>();
         pM = GetComponent<playerMovement>();
     }
@@ -81,7 +81,7 @@ public class playerJump : MonoBehaviour
     #region Functions
     void jump()
     {
-        ChangeAnimationState(PLAYER_JUMPING);
+        movement.Jump();
         doubleJumpAvailable = true;
         rigidbod.velocity = new Vector2(0, 0);
         rigidbod.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
@@ -90,23 +90,12 @@ public class playerJump : MonoBehaviour
     }
     void doubleJump()
     {
-        ChangeAnimationState(PLAYER_JUMPING);
+        movement.Jump();
         rigidbod.velocity = new Vector2(0, 0);
         rigidbod.AddForce(new Vector2(0, JumpForce / 1.5f), ForceMode2D.Impulse);
         doubleJumpAvailable = false;
 
         PlayerSound.Instance.PlayJumpSound();
-    }
-    void ChangeAnimationState(string newState)
-    {
-        //stop the same animation from interrupting itself
-        if (currentState == newState) return;
-
-        //play the animation
-        anim.Play(newState);
-
-        //reassign the current state
-        currentState = newState;
     }
     #endregion
 }
