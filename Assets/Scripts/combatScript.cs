@@ -8,9 +8,7 @@ public class combatScript : MonoBehaviour
     private Animator anim;
     public float comboWindow = 0;
     public bool isArmed;
-    public bool attacked1 = false;
-    public bool attacked2 = false;
-    public bool attacked3 = false;
+    public int attackCount = 0;
     const string Player_Attack1 = "Attack1";
     const string Player_Attack2 = "Attack2";
     const string Player_Attack3 = "Attack3";
@@ -24,38 +22,41 @@ public class combatScript : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        //ALL THE BOOLS GET SET AT ONCE. FIX IT!!!
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true && attackCount == 0)
         {
             ChangeAnimationState(Player_Attack1);
-            attacked1 = true;
+            attackCount = 1;
             comboWindow = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true && attacked1 == true && comboWindow != 0)
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true && attackCount == 1 && comboWindow != 0)
         {
             ChangeAnimationState(Player_Attack2);
-            attacked2 = true;
+            attackCount = 2;
             comboWindow = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true && attacked2 == true && comboWindow != 0)
+        else if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true && attackCount == 2 && comboWindow != 0)
         {
             ChangeAnimationState(Player_Attack3);
-            attacked3 = true; 
+            attackCount = 3;
             Invoke("SetBoolBack", 1);
         }
         if (comboWindow > 0)
         {
             comboWindow -= Time.deltaTime;
         }
-        else
+        else if (comboWindow <= 0 && attackCount > 0)
         {
-            comboWindow = 0;
+            Invoke("SetBoolBack", 1);
         }
     }
     void ChangeAnimationState(string newState)
     {
         //stop the same animation from interrupting itself
-        if (currentState == newState) return;
+        if (currentState == newState)
+        {
+            return;
+        }
+        if (newState == Player_Attack2) Debug.Log("ATTACK 2");
 
         //play the animation
         anim.Play(newState);
@@ -66,9 +67,8 @@ public class combatScript : MonoBehaviour
 
     private void SetBoolBack()
     {
-        attacked1 = false;
-        attacked2 = false;
-        attacked3 = false;
+        comboWindow = 0;
+        attackCount = 0;
         ChangeAnimationState(Player_Idle);
     }
 }
