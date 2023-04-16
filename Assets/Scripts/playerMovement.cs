@@ -47,7 +47,16 @@ public class playerMovement : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         if (canMove)
         {
-            transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
+            if (isAttacking)
+            {
+                //rb.MovePosition(new Vector3(moveInput, 0, 0) * Time.deltaTime * speed * 0.5f);
+                transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed * 0.5f;
+            }
+            else
+            {
+                //rb.MovePosition(new Vector3(moveInput, 0, 0) * Time.deltaTime * speed);
+                transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
+            }
         }
 
         //Facing Right

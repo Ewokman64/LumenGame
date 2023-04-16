@@ -18,7 +18,7 @@ public class groundCheckBox : MonoBehaviour
     }
     public bool isGrounded()
     {
-        return grounded = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .05f, jumpableGround);
+        return grounded = Physics2D.BoxCast(coll.bounds.center - new Vector3(0f, 0.35f), new Vector2(0.4f, 0.1f), 0f, Vector2.down, .05f, jumpableGround);
     }
 
     #region Update

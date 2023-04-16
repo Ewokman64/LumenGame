@@ -40,7 +40,7 @@ public class playerJump : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
             if (gC.isGrounded())
             {
@@ -50,7 +50,7 @@ public class playerJump : MonoBehaviour
 
         if (doubleJumpAvailable)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
             {
 
                 doubleJump();

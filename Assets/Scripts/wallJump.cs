@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class wallJump : MonoBehaviour
 {
-    public float checkRadius;
+    /*public float checkRadius;
     public bool isTouchingFront;
     public Transform frontCheck;
     public Transform frontCheck2;
@@ -12,9 +12,8 @@ public class wallJump : MonoBehaviour
     public bool wallJumping;
     public float wallSlidingSpeed;
     public LayerMask whatIsGround;
-    private groundCheckBox gCB;
-    private playerMovement pM;
-    private Rigidbody2D rb;
+
+
 
     public float xWallForce;
     public float yWallForce;
@@ -22,7 +21,15 @@ public class wallJump : MonoBehaviour
 
     public float turnVelX;
     public bool jumpedFromLeft;
-    public bool jumpedFromRight;
+    public bool jumpedFromRight;*/
+
+    private bool isWallSliding;
+    private float wallSlidingSpeed = 2f;
+    [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
+    private groundCheckBox gCB;
+    private playerMovement pM;
+    private Rigidbody2D rb;
     private playerJump pJ;
 
     private Animator anim;
@@ -44,7 +51,8 @@ public class wallJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, whatIsGround);
+        WallSlide();
+        /*isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, whatIsGround);
         isTouchingFront = Physics2D.OverlapCircle(frontCheck2.position, checkRadius, whatIsGround);
         if (isTouchingFront && gCB.isGrounded() == false && pM.moveInput != 0)
         {
@@ -75,7 +83,7 @@ public class wallJump : MonoBehaviour
         //Moving Left
         if (pM.moveInput == -1)
         {
-            if (wallJumping && gCB.isGrounded() == false /*&& jumpedFromRight == false*/)
+            if (wallJumping && gCB.isGrounded() == false /*&& jumpedFromRight == false)
             {
                 StartCoroutine(timer());
                 rb.AddForce(new Vector2(xWallForce, yWallForce), ForceMode2D.Impulse);
@@ -86,7 +94,7 @@ public class wallJump : MonoBehaviour
         }
         if (pM.moveInput == 1)
         {
-            if (wallJumping && gCB.isGrounded() == false/* && jumpedFromLeft == false*/)
+            if (wallJumping && gCB.isGrounded() == false/* && jumpedFromLeft == false)
             {
                 StartCoroutine(timer());
                 rb.AddForce(new Vector2(-xWallForce, yWallForce), ForceMode2D.Impulse);
@@ -141,7 +149,7 @@ public class wallJump : MonoBehaviour
                 rb.velocity = new Vector2(-turnVelX, rb.velocity.y);
             }
         }
-    }*/
+    }
     void setWallJumping()
     {
         wallJumping = false;
@@ -157,5 +165,19 @@ public class wallJump : MonoBehaviour
 
         //reassign the current state
         currentState = newState;
+    }*/
+
+    private bool IsOnWall()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+
+    private void WallSlide()
+    {
+        if (IsOnWall() && !gCB.isGrounded() && pM.moveInput != 0f)
+        {
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
     }
 }
