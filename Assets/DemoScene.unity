@@ -22494,7 +22494,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -48987,6 +48987,11 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!4 &1835386231 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4855028784190453017, guid: dd8fed0857a6cd54ea43386c7cda7188, type: 3}
+  m_PrefabInstance: {fileID: 4855028784671163602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1885803385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49035,6 +49040,14 @@ PrefabInstance:
     - target: {fileID: 4855028784520253848, guid: dd8fed0857a6cd54ea43386c7cda7188, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855028784520253848, guid: dd8fed0857a6cd54ea43386c7cda7188, type: 3}
+      propertyPath: wallCheck
+      value: 
+      objectReference: {fileID: 1835386231}
+    - target: {fileID: 4855028784520253848, guid: dd8fed0857a6cd54ea43386c7cda7188, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 4855028784520253849, guid: dd8fed0857a6cd54ea43386c7cda7188, type: 3}
       propertyPath: spawnLocation
