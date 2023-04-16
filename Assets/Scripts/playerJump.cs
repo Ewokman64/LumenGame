@@ -9,6 +9,7 @@ public class playerJump : MonoBehaviour
 
     private bool jumpIsPressed = false;
     public bool doubleJumpAvailable;
+    public bool hasDoubleJumped;
     private playerMovement movement;
     private Rigidbody2D rigidbod;
     private groundCheckBox gC;
@@ -50,7 +51,7 @@ public class playerJump : MonoBehaviour
 
         if (doubleJumpAvailable)
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && !hasDoubleJumped)
             {
 
                 doubleJump();
@@ -64,6 +65,11 @@ public class playerJump : MonoBehaviour
         if (gC.isGrounded() && rigidbod.velocity.y < 0.1f)
         {
             doubleJumpAvailable = false;
+            hasDoubleJumped = false;
+        }
+        else if (!hasDoubleJumped)
+        {
+            doubleJumpAvailable = true;
         }
 
         //Cut Jump
@@ -83,7 +89,7 @@ public class playerJump : MonoBehaviour
     {
         movement.Jump();
         doubleJumpAvailable = true;
-        rigidbod.velocity = new Vector2(0, 0);
+        //rigidbod.velocity = new Vector2(0, 0);
         rigidbod.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
 
         PlayerSound.Instance.PlayJumpSound();
@@ -91,10 +97,10 @@ public class playerJump : MonoBehaviour
     void doubleJump()
     {
         movement.Jump();
-        rigidbod.velocity = new Vector2(0, 0);
+        //rigidbod.velocity = new Vector2(0, 0);
         rigidbod.AddForce(new Vector2(0, JumpForce / 1.5f), ForceMode2D.Impulse);
         doubleJumpAvailable = false;
-
+        hasDoubleJumped = true;
         PlayerSound.Instance.PlayJumpSound();
     }
     #endregion

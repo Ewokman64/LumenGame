@@ -9,12 +9,12 @@ public class groundCheckBox : MonoBehaviour
     public bool grounded;
     [SerializeField] LayerMask jumpableGround;
 
-    private BoxCollider2D coll;
+    private CapsuleCollider2D coll;
     private GameObject hitObject;
 
     private void Start()
     {
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<CapsuleCollider2D>();
     }
     public bool isGrounded()
     {

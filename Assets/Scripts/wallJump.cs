@@ -4,39 +4,21 @@ using UnityEngine;
 
 public class wallJump : MonoBehaviour
 {
-    /*public float checkRadius;
-    public bool isTouchingFront;
-    public Transform frontCheck;
-    public Transform frontCheck2;
-    public bool wallSliding;
-    public bool wallJumping;
-    public float wallSlidingSpeed;
-    public LayerMask whatIsGround;
-
-
-
-    public float xWallForce;
-    public float yWallForce;
-    public float wallJumpTime;
-
-    public float turnVelX;
-    public bool jumpedFromLeft;
-    public bool jumpedFromRight;*/
-
-    private bool isWallSliding;
-    private float wallSlidingSpeed = 2f;
+    public bool isWallSliding;
+    public bool isWallJumping;
+    private float wallJumpingDirection;
+    private float wallJumpingTime = 0.2f;
+    public float wallJumpingCounter;
+    private float wallJumpingDuration = 0.4f;
+    private float wallJumpingPower = 10f;
+    private float wallSlidingSpeed = 1.3f;
     [SerializeField] private Transform wallCheck;
+    [SerializeField] private Transform backWallCheck;
     [SerializeField] private LayerMask wallLayer;
     private groundCheckBox gCB;
     private playerMovement pM;
     private Rigidbody2D rb;
     private playerJump pJ;
-
-    private Animator anim;
-    private string currentState;
-    const string PLAYER_WALLGRAB = "wallgrab_Animation";
-    const string PLAYER_JUMP = "jump_Animation";
-
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +26,6 @@ public class wallJump : MonoBehaviour
         gCB = GetComponent<groundCheckBox>();
         pM = GetComponent<playerMovement>();
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         pJ = GetComponent<playerJump>();
     }
 
@@ -52,132 +33,69 @@ public class wallJump : MonoBehaviour
     void Update()
     {
         WallSlide();
-        /*isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkRadius, whatIsGround);
-        isTouchingFront = Physics2D.OverlapCircle(frontCheck2.position, checkRadius, whatIsGround);
-        if (isTouchingFront && gCB.isGrounded() == false && pM.moveInput != 0)
-        {
-            wallSliding = true;
-            ChangeAnimationState(PLAYER_WALLGRAB);
-            jumpedFromRight = false;
-            jumpedFromLeft = false;
-        }
-        if (isTouchingFront == false || pM.moveInput == 0 || gCB.isGrounded())
-        {
-            wallSliding = false;
-            ChangeAnimationState(PLAYER_JUMP);
-
-        }
-
-        if (wallSliding)
-        {
-            //locked falling down speed
-            rb.velocity = new Vector2(0, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && wallSliding == true)
-        {
-            wallJumping = true;
-            ChangeAnimationState(PLAYER_JUMP);
-            pJ.doubleJumpAvailable = true;
-            Invoke("setWallJumping", wallJumpTime);
-        }
-        //Moving Left
-        if (pM.moveInput == -1)
-        {
-            if (wallJumping && gCB.isGrounded() == false /*&& jumpedFromRight == false)
-            {
-                StartCoroutine(timer());
-                rb.AddForce(new Vector2(xWallForce, yWallForce), ForceMode2D.Impulse);
-                rb.velocity = new Vector2(xWallForce, yWallForce);
-                jumpedFromLeft = true;
-            }
-
-        }
-        if (pM.moveInput == 1)
-        {
-            if (wallJumping && gCB.isGrounded() == false/* && jumpedFromLeft == false)
-            {
-                StartCoroutine(timer());
-                rb.AddForce(new Vector2(-xWallForce, yWallForce), ForceMode2D.Impulse);
-                rb.velocity = new Vector2(-xWallForce, yWallForce);
-                jumpedFromRight = true;
-            }
-        }
-
-        IEnumerator timer()
-        {
-            pM.canMove = false;
-            yield return new WaitForSeconds(0.7f);
-            pM.canMove = true;
-        }
-        /*
-        if (jumpedFromLeft)
-        {
-            //pM.canMove = false;
-            //turnVelRight();
-        }
-        if (jumpedFromRight)
-        {
-            //pM.canMove = false;
-            //turnVelLeft();
-        }
-        
-        
-        if (gCB.isGrounded())
-        {
-            jumpedFromRight = false;
-            jumpedFromLeft = false;
-        }*/
-    }
-    /*
-    void turnVelRight()
-    {
-        if (pM.moveInput == 1 || pM.moveInput == 0 || pM.moveInput == -1)
-        {
-            if (isTouchingFront)
-            {
-                rb.velocity = new Vector2(turnVelX, rb.velocity.y);
-            }
-        }
-    }
-    void turnVelLeft()
-    {
-
-        if (pM.moveInput == -1 || pM.moveInput == 0 || pM.moveInput == 1)
-        {
-            if (isTouchingFront)
-            {
-                rb.velocity = new Vector2(-turnVelX, rb.velocity.y);
-            }
-        }
-    }
-    void setWallJumping()
-    {
-        wallJumping = false;
+        WallJump();
     }
 
-    void ChangeAnimationState(string newState)
+    private void WallJump()
     {
-        //stop the same animation from interrupting itself
-        if (currentState == newState) return;
+        if (isWallSliding || (isWallJumping == true && wallJumpingCounter <= 0f))
+        {
+            isWallJumping = false;
+            wallJumpingDirection = pM.isFacingRight ? -1 : 1;
+            wallJumpingCounter = wallJumpingTime;
+            CancelInvoke(nameof(StopWallJumping));
+        }
+        else
+        {
+            wallJumpingCounter -= Time.deltaTime;
+        }
 
-        //play the animation
-        anim.Play(newState);
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && wallJumpingCounter > 0f)
+        {
+            isWallJumping = true;
+            if (pM.moveInput == 0f)
+            {
+                rb.AddForce(new Vector2(wallJumpingDirection * 5, wallJumpingPower), ForceMode2D.Impulse);
+            }
+            else
+            {
+                rb.AddForce(new Vector2(0, wallJumpingPower * 2), ForceMode2D.Impulse);
+            }
 
-        //reassign the current state
-        currentState = newState;
-    }*/
+            wallJumpingCounter = 0f;
+        }
+    }
+
+    private void StopWallJumping()
+    {
+        isWallJumping = false;
+    }
 
     private bool IsOnWall()
     {
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
+    private bool IsBackOnWall()
+    {
+        return Physics2D.OverlapCircle(backWallCheck.position, 0.2f, wallLayer);
+    }
+
     private void WallSlide()
     {
-        if (IsOnWall() && !gCB.isGrounded() && pM.moveInput != 0f)
+        if ((IsOnWall() || IsBackOnWall()) && !gCB.isGrounded())
         {
             isWallSliding = true;
+            if (IsBackOnWall())
+            {
+                if (pM.isFacingLeft) pM.facingRight();
+                else pM.facingLeft();
+            }
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
         }
     }
 }

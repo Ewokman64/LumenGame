@@ -20,6 +20,7 @@ public class playerMovement : MonoBehaviour
     private groundCheckBox gC;
     private Animator anim;
     private playerJump pJ;
+    private wallJump wS;
     private Rigidbody2D rb;
     private bool isAttacking;
 
@@ -29,6 +30,7 @@ public class playerMovement : MonoBehaviour
     const string PLAYER_IDLE = "idle_Animation";
     const string PLAYER_WALKING = "walking_Animation";
     const string PLAYER_JUMPING = "jump_Animation";
+    const string PLAYER_WALLGRAB = "wallgrab_Animation";
     #endregion
 
 
@@ -39,6 +41,7 @@ public class playerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         gC = GetComponent<groundCheckBox>();
         pJ = GetComponent<playerJump>();
+        wS = GetComponent<wallJump>();
         rb = GetComponent<Rigidbody2D>();
         #endregion
     }
@@ -49,12 +52,10 @@ public class playerMovement : MonoBehaviour
         {
             if (isAttacking)
             {
-                //rb.MovePosition(new Vector3(moveInput, 0, 0) * Time.deltaTime * speed * 0.5f);
                 transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed * 0.5f;
             }
             else
             {
-                //rb.MovePosition(new Vector3(moveInput, 0, 0) * Time.deltaTime * speed);
                 transform.position += new Vector3(moveInput, 0, 0) * Time.deltaTime * speed;
             }
         }
@@ -85,33 +86,38 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (gC.isGrounded() == false && rb.velocity.y != 0 && isAttacking == false)
+        if (wS.isWallSliding)
+        {
+            ChangeAnimationState(PLAYER_WALLGRAB);
+        }
+        else if (gC.isGrounded() == false && rb.velocity.y != 0 && isAttacking == false && wS.wallJumpingCounter <= 0f)
         {
             ChangeAnimationState(PLAYER_JUMPING);
 
         }
         //If not moving and is Grounded
-        if (moveInput == 0 && gC.isGrounded() && rb.velocity.y == 0 && isAttacking == false)
+        else if (moveInput == 0 && gC.isGrounded() && rb.velocity.y == 0 && isAttacking == false)
         {
             ChangeAnimationState(PLAYER_IDLE);
         }
-        if (gC.isGrounded() && moveInput != 0 && rb.velocity.y <= 0.1f && isAttacking == false)
+        else if (gC.isGrounded() && moveInput != 0 && rb.velocity.y <= 0.1f && isAttacking == false)
         {
             ChangeAnimationState(PLAYER_WALKING);
         }
+
         if (gC.isGrounded())
         {
             canMove = true;
         }
     }
     #region Functions
-    void facingLeft()
+    public void facingLeft()
     {
         isFacingLeft = true;
         isFacingRight = false;
         gameObject.transform.localScale = new Vector3(-1f, 1f, 1);
     }
-    void facingRight()
+    public void facingRight()
     {
         isFacingRight = true;
         isFacingLeft = false;
@@ -132,8 +138,11 @@ public class playerMovement : MonoBehaviour
 
     public void Attack(string attackState)
     {
-        isAttacking = true;
-        ChangeAnimationState(attackState);
+        if (!wS.isWallSliding)
+        {
+            isAttacking = true;
+            ChangeAnimationState(attackState);
+        }
     }
 
     public void StopAttack()
@@ -143,7 +152,7 @@ public class playerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (!isAttacking)
+        if (!isAttacking && !wS.isWallSliding)
         {
             ChangeAnimationState(PLAYER_JUMPING);
         }
