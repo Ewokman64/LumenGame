@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: ea76e6727da6ed843af2702c387a77fa
+guid: 7a2be69986ec29f4089d9f4b4432b01b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4881921772463754841
-    second: LumenBoy_Attack2_0
+      213: -4156496431864202928
+    second: ShadowBug_Colored_Idle_3eyed_0
   - first:
-      213: -801731065268839950
-    second: LumenBoy_Attack2_1
+      213: -8822098932861860
+    second: ShadowBug_Colored_Idle_3eyed_1
   - first:
-      213: 4746178610716484150
-    second: LumenBoy_Attack2_2
+      213: -7512993081207533108
+    second: ShadowBug_Colored_Idle_3eyed_2
   - first:
-      213: -1563057306566033377
-    second: LumenBoy_Attack2_3
+      213: 6357265378691750950
+    second: ShadowBug_Colored_Idle_3eyed_3
   - first:
-      213: -425765724188342418
-    second: LumenBoy_Attack2_4
+      213: 5763102256784109033
+    second: ShadowBug_Colored_Idle_3eyed_4
   - first:
-      213: 1486437198458824352
-    second: LumenBoy_Attack2_5
+      213: 5618426876528522666
+    second: ShadowBug_Colored_Idle_3eyed_5
+  - first:
+      213: -428910180099866694
+    second: ShadowBug_Colored_Idle_3eyed_6
+  - first:
+      213: 2972078530575596312
+    second: ShadowBug_Colored_Idle_3eyed_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -86,7 +92,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,7 +104,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +116,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,7 +128,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +140,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,91 +151,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LumenBoy_Attack2_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a17d03730eef3cb0800000000000000
-      internalID: -4881921772463754841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LumenBoy_Attack2_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f9514908ddafd4f0800000000000000
-      internalID: -801731065268839950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LumenBoy_Attack2_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6322054dc40ddd140800000000000000
-      internalID: 4746178610716484150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LumenBoy_Attack2_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f108d8e39a7ee4ae0800000000000000
-      internalID: -1563057306566033377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LumenBoy_Attack2_4
+      name: ShadowBug_Colored_Idle_3eyed_0
       rect:
         serializedVersion: 2
         x: 0
@@ -243,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6787346450671af0800000000000000
-      internalID: -425765724188342418
+      spriteID: 0593e8c64882156c0800000000000000
+      internalID: -4156496431864202928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LumenBoy_Attack2_5
+      name: ShadowBug_Colored_Idle_3eyed_1
       rect:
         serializedVersion: 2
         x: 64
@@ -264,8 +186,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a6a01ba1c2e0a410800000000000000
-      internalID: 1486437198458824352
+      spriteID: c54fee60958a0eff0800000000000000
+      internalID: -8822098932861860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Colored_Idle_3eyed_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc158a2299c7cb790800000000000000
+      internalID: -7512993081207533108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Colored_Idle_3eyed_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c9fcffd2b893850800000000000000
+      internalID: 6357265378691750950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Colored_Idle_3eyed_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed6ed3e7f6aaff40800000000000000
+      internalID: 5763102256784109033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Colored_Idle_3eyed_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa57dfbf979a8fd40800000000000000
+      internalID: 5618426876528522666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Colored_Idle_3eyed_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf3992b6743c0af0800000000000000
+      internalID: -428910180099866694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Colored_Idle_3eyed_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bf5834da1fe3920800000000000000
+      internalID: 2972078530575596312
       vertices: []
       indices: 
       edges: []
