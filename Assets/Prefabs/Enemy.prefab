@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6537355788061334483}
   - component: {fileID: 1507306295}
   - component: {fileID: 1507306294}
+  - component: {fileID: 8276337930913282955}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: ShadowBug
@@ -284,3 +285,22 @@ PolygonCollider2D:
       - {x: -0.04296875, y: 0.20703125}
       - {x: -0.04296875, y: 0.10546875}
       - {x: -0.05078125, y: 0.10546875}
+--- !u!95 &8276337930913282955
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537355788061334482}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: caceaa1106830764c9b7eb55a18d251a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

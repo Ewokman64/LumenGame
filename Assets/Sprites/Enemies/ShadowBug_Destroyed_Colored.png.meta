@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 2f99e684ca7bcf04f9e7c8ad52e3aeb0
+guid: 296b5e5a8edfd664baa22f875f3d1325
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5686169689890683024
-    second: flydude_idle_0
+      213: -8948359052415275709
+    second: ShadowBug_Destroyed_Colored_0
   - first:
-      213: 1713485067081604115
-    second: flydude_idle_1
+      213: 6771266919846249303
+    second: ShadowBug_Destroyed_Colored_1
+  - first:
+      213: 1472187618381518198
+    second: ShadowBug_Destroyed_Colored_2
+  - first:
+      213: -1285653230446131729
+    second: ShadowBug_Destroyed_Colored_3
+  - first:
+      213: 5504642496161710851
+    second: ShadowBug_Destroyed_Colored_4
+  - first:
+      213: -5307681339944513606
+    second: ShadowBug_Destroyed_Colored_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -38,7 +50,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -133,28 +145,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flydude_idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 077097d2bcaa611b0800000000000000
-      internalID: -5686169689890683024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flydude_idle_1
+      name: ShadowBug_Destroyed_Colored_0
       rect:
         serializedVersion: 2
         x: 0
@@ -168,8 +159,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31cd55f079587c710800000000000000
-      internalID: 1713485067081604115
+      spriteID: 34de22e2ada01d380800000000000000
+      internalID: -8948359052415275709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Destroyed_Colored_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7530acc436f58fd50800000000000000
+      internalID: 6771266919846249303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Destroyed_Colored_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675db54c6d24e6410800000000000000
+      internalID: 1472187618381518198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Destroyed_Colored_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5cce6d231782ee0800000000000000
+      internalID: -1285653230446131729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Destroyed_Colored_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3030d377f2b646c40800000000000000
+      internalID: 5504642496161710851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowBug_Destroyed_Colored_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf43af41f35756b0800000000000000
+      internalID: -5307681339944513606
       vertices: []
       indices: 
       edges: []
