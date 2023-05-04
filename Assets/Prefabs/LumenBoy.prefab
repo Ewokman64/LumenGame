@@ -183,8 +183,8 @@ MonoBehaviour:
   speed: 3
   isFacingLeft: 0
   isFacingRight: 0
-  maxSpeedX: 3.5
-  maxSpeedY: 3.5
+  maxSpeedX: 4
+  maxSpeedY: 4
   canMove: 1
 --- !u!114 &253681217440528848
 MonoBehaviour:

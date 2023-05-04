@@ -97,8 +97,8 @@ public class playerJump : MonoBehaviour
     void doubleJump()
     {
         movement.Jump();
-        //rigidbod.velocity = new Vector2(0, 0);
-        rigidbod.AddForce(new Vector2(0, JumpForce / 1.5f), ForceMode2D.Impulse);
+        rigidbod.velocity = new Vector2(rigidbod.velocity.x, 0);
+        rigidbod.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         doubleJumpAvailable = false;
         hasDoubleJumped = true;
         PlayerSound.Instance.PlayJumpSound();
