@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 6804956625171937294}
   - component: {fileID: 3228301521744847561}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: ShadowBug
   m_TagString: ShadowBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
