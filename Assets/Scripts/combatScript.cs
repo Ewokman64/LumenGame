@@ -13,6 +13,8 @@ public class combatScript : MonoBehaviour
     const string Player_Attack1 = "Attack1";
     const string Player_Attack2 = "Attack2";
     const string Player_Attack3 = "Attack3";
+    [SerializeField] GameObject attackCenter;
+    [SerializeField] LayerMask enemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class combatScript : MonoBehaviour
             attackCount = 1;
             comboWindow = 1;
             timeSinceAttack = 0;
+            AttackDamage();
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true && attackCount == 1 && comboWindow != 0 && timeSinceAttack > 0.3)
         {
@@ -38,12 +41,14 @@ public class combatScript : MonoBehaviour
             attackCount = 2;
             comboWindow = 1;
             timeSinceAttack = 0;
+            AttackDamage();
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && isArmed == true && attackCount == 2 && comboWindow != 0 && timeSinceAttack > 0.4)
         {
             movement.Attack(Player_Attack3);
             attackCount = 3;
             timeSinceAttack = 0;
+            AttackDamage();
         }
         if (comboWindow > 0)
         {
@@ -52,6 +57,18 @@ public class combatScript : MonoBehaviour
         else if (comboWindow <= 0 && attackCount > 0 && timeSinceAttack > 0.5)
         {
             ResetAttack();
+        }
+    }
+
+    private void AttackDamage()
+    {
+        Debug.Log("TRY TO DAMAGE");
+        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackCenter.transform.position, .5f, enemies);
+        foreach (Collider2D enemyGameObject in enemy)
+        {
+            Enemy enemyScript = enemyGameObject.GetComponent<Enemy>();
+            enemyScript.Damage();
+            Debug.Log("DAMAGED");
         }
     }
 

@@ -2,45 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shadowbug : MonoBehaviour
+public class Shadowbug : Enemy
 {
-    private BoxCollider2D gC;
-    private Animator anim;
-    private Rigidbody2D rb;
-    [SerializeField] LayerMask walkableGround;
-    public float speed;
-
-    private string IDLE = "ShadowBug_idle";
-    private string ATTACK = "Attack_ShadowBug";
-    private string DAMAGED = "Damaged_ShadowBug";
-    private string DEATH = "Death_ShadowBug";
-    
-    public bool grounded;
-
-
     // Start is called before the first frame update
     void Start()
     {
+        IDLE = "ShadowBug_idle";
+        ATTACK = "Attack_ShadowBug";
+        DAMAGED = "Damaged_ShadowBug";
+        DEATH = "Death_ShadowBug";
+        currentState = "ShadowBug_idle";
         gC = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        health = 2;
     }
 
-    public bool isGrounded(){
+    public bool isGrounded()
+    {
         return grounded = Physics2D.BoxCast(gC.bounds.center, new Vector2(0.4f, 0.1f), 0f, Vector2.down, .05f, walkableGround);
     }
 
-    void Update(){
+    void Update()
+    {
 
     }
 
-    void FixedUpdate(){
-        if (!isGrounded()){
-            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x * -1f,1f,1f);
+    void FixedUpdate()
+    {
+        if (!isGrounded())
+        {
+            gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x * -1f, 1f, 1f);
         }
-        Move();
+        if (currentState == IDLE)
+        {
+            Move();
+        }
+
     }
-    void Move(){
-        transform.position += new Vector3(gameObject.transform.localScale.x*-1, 0, 0) * Time.deltaTime * speed;
+    void Move()
+    {
+        transform.position += new Vector3(gameObject.transform.localScale.x * -1, 0, 0) * Time.deltaTime * speed;
+    }
+
+    override public void Damage()
+    {
+        isAttacking = false;
+        health -= 1;
+        if (health <= 0)
+        {
+            ChangeAnimationState(DEATH);
+            GameObject.Destroy(gameObject);
+        }
+        else
+            ChangeAnimationState(DAMAGED);
     }
 }
