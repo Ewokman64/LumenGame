@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 399502}
   - component: {fileID: 399504}
   - component: {fileID: 399505}
+  - component: {fileID: 399506}
   m_Layer: 0
   m_Name: Light1
   m_TagString: Untagged
@@ -255,7 +256,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -293,6 +294,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.71577454, y: 0.7969818}
   m_EdgeRadius: 0
+--- !u!114 &399506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd2c9e80bf3e14e9ea9879f7a3a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 2
+  pullForce: 2
+  interactionDistance: 0.5
+  pushPullButton: 101
+  pushColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  pullColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  originalColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
 --- !u!1 &1403351
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21945012}
   - component: {fileID: 21945013}
+  - component: {fileID: 21945014}
   m_Layer: 0
   m_Name: LightPillar_1
   m_TagString: Untagged
@@ -461,6 +497,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &21945014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21945011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &40392646
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40392647}
   - component: {fileID: 40392648}
+  - component: {fileID: 40392649}
   m_Layer: 0
   m_Name: LightPillar_0 (1)
   m_TagString: Untagged
@@ -545,6 +594,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &40392649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40392646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &42291530
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +695,9 @@ GameObject:
   - component: {fileID: 120892917}
   - component: {fileID: 120892919}
   - component: {fileID: 120892920}
+  - component: {fileID: 120892922}
+  - component: {fileID: 120892923}
+  - component: {fileID: 120892924}
   m_Layer: 0
   m_Name: Light3
   m_TagString: Untagged
@@ -754,7 +818,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120892916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -792,6 +856,108 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.73607445, y: 0.77668}
   m_EdgeRadius: 0
+--- !u!114 &120892922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120892916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd2c9e80bf3e14e9ea9879f7a3a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 2
+  pullForce: 2
+  interactionDistance: 0.1
+  pushPullButton: 101
+  pushColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  pullColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  originalColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
+--- !u!114 &120892923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120892916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd2c9e80bf3e14e9ea9879f7a3a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 5
+  pullForce: 2
+  interactionDistance: 2
+  pushPullButton: 32
+  pushColor:
+    r: 0
+    g: 1
+    b: 0
+    a: 1
+  pullColor:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  originalColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
+--- !u!114 &120892924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120892916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd2c9e80bf3e14e9ea9879f7a3a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 2
+  pullForce: 2
+  interactionDistance: 0.5
+  pushPullButton: 101
+  pushColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  pullColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  originalColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
 --- !u!213 &123510697
 Sprite:
   m_ObjectHideFlags: 0
@@ -1018,7 +1184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &230617486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1079,7 +1245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230617485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.318672, y: 1.6829695, z: 0}
+  m_LocalPosition: {x: 33.318672, y: 1.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1096,6 +1262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 233072967}
   - component: {fileID: 233072968}
+  - component: {fileID: 233072969}
   m_Layer: 0
   m_Name: LightPillar_5
   m_TagString: Untagged
@@ -1170,6 +1337,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &233072969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233072966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &295753583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 316521002}
   - component: {fileID: 316521003}
+  - component: {fileID: 316521004}
   m_Layer: 0
   m_Name: LightPillar_0
   m_TagString: Untagged
@@ -1287,6 +1467,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &316521004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316521001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &329733887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329733888}
   - component: {fileID: 329733889}
+  - component: {fileID: 329733890}
   m_Layer: 0
   m_Name: LightPillar_2 (1)
   m_TagString: Untagged
@@ -1371,6 +1564,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &329733890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329733887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &404499777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404499778}
   - component: {fileID: 404499779}
+  - component: {fileID: 404499780}
   m_Layer: 0
   m_Name: LightPillar_1
   m_TagString: Untagged
@@ -1455,6 +1661,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &404499780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404499777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405999213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 405999214}
   - component: {fileID: 405999215}
+  - component: {fileID: 405999216}
   m_Layer: 0
   m_Name: LightPillar_1 (1)
   m_TagString: Untagged
@@ -1539,6 +1758,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &405999216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405999213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &439537196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439537197}
   - component: {fileID: 439537198}
+  - component: {fileID: 439537199}
   m_Layer: 0
   m_Name: LightPillar_3 (1)
   m_TagString: Untagged
@@ -1623,6 +1855,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &439537199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439537196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &448364749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +2007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461074645}
   - component: {fileID: 461074646}
+  - component: {fileID: 461074647}
   m_Layer: 0
   m_Name: LightPillar_4
   m_TagString: Untagged
@@ -1837,6 +2082,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &461074647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461074644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519596152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,6 +2104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 519596153}
   - component: {fileID: 519596154}
+  - component: {fileID: 519596155}
   m_Layer: 0
   m_Name: LightPillar_4 (1)
   m_TagString: Untagged
@@ -1921,6 +2179,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &519596155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519596152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!213 &579088148
 Sprite:
   m_ObjectHideFlags: 0
@@ -2225,6 +2495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640523599}
   - component: {fileID: 640523600}
+  - component: {fileID: 640523601}
   m_Layer: 0
   m_Name: LightPillar_1 (1)
   m_TagString: Untagged
@@ -2299,6 +2570,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &640523601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640523598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &670344800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,6 +2746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780812643}
   - component: {fileID: 780812644}
+  - component: {fileID: 780812645}
   m_Layer: 0
   m_Name: LightPillar_1 (1)
   m_TagString: Untagged
@@ -2537,6 +2821,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &780812645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780812642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &798707428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,6 +2843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798707429}
   - component: {fileID: 798707430}
+  - component: {fileID: 798707431}
   m_Layer: 0
   m_Name: LightPillar_2
   m_TagString: Untagged
@@ -2621,6 +2918,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &798707431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798707428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &836638269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,6 +2940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836638270}
   - component: {fileID: 836638271}
+  - component: {fileID: 836638272}
   m_Layer: 0
   m_Name: LightPillar_3 (1)
   m_TagString: Untagged
@@ -2705,6 +3015,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &836638272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836638269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &837285002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +3037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837285003}
   - component: {fileID: 837285004}
+  - component: {fileID: 837285005}
   m_Layer: 0
   m_Name: LightPillar_2
   m_TagString: Untagged
@@ -2789,6 +3112,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &837285005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837285002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &851630301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,6 +3134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 851630302}
   - component: {fileID: 851630303}
+  - component: {fileID: 851630304}
   m_Layer: 0
   m_Name: LightPillar_5
   m_TagString: Untagged
@@ -2873,6 +3209,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &851630304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851630301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &857482328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,6 +3231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 857482329}
   - component: {fileID: 857482330}
+  - component: {fileID: 857482331}
   m_Layer: 0
   m_Name: LightPillar_5 (1)
   m_TagString: Untagged
@@ -2957,6 +3306,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &857482331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857482328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &878651970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3035,6 +3396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 953778553}
   - component: {fileID: 953778554}
+  - component: {fileID: 953778555}
   m_Layer: 0
   m_Name: LightPillar_4
   m_TagString: Untagged
@@ -3109,6 +3471,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &953778555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953778552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &960377881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,6 +4061,9 @@ GameObject:
   - component: {fileID: 1075171610}
   - component: {fileID: 1075171612}
   - component: {fileID: 1075171613}
+  - component: {fileID: 1075171615}
+  - component: {fileID: 1075171616}
+  - component: {fileID: 1075171617}
   m_Layer: 0
   m_Name: Light2
   m_TagString: Untagged
@@ -3807,7 +4184,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075171609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3845,6 +4222,108 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.73607635, y: 0.79698086}
   m_EdgeRadius: 0
+--- !u!114 &1075171615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075171609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd2c9e80bf3e14e9ea9879f7a3a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 2
+  pullForce: 2
+  interactionDistance: 0.1
+  pushPullButton: 101
+  pushColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  pullColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  originalColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
+--- !u!114 &1075171616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075171609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd2c9e80bf3e14e9ea9879f7a3a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 5
+  pullForce: 2
+  interactionDistance: 2
+  pushPullButton: 32
+  pushColor:
+    r: 0
+    g: 1
+    b: 0
+    a: 1
+  pullColor:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  originalColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
+--- !u!114 &1075171617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075171609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd2c9e80bf3e14e9ea9879f7a3a485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 2
+  pullForce: 2
+  interactionDistance: 0.5
+  pushPullButton: 101
+  pushColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  pullColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  rb: {fileID: 0}
+  player: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  originalColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 0
 --- !u!1 &1150039367
 GameObject:
   m_ObjectHideFlags: 0
@@ -3855,6 +4334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150039368}
   - component: {fileID: 1150039369}
+  - component: {fileID: 1150039370}
   m_Layer: 0
   m_Name: LightPillar_3
   m_TagString: Untagged
@@ -3929,6 +4409,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1150039370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150039367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1164972616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3939,6 +4431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1164972617}
   - component: {fileID: 1164972618}
+  - component: {fileID: 1164972619}
   m_Layer: 0
   m_Name: LightPillar_4
   m_TagString: Untagged
@@ -4013,6 +4506,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1164972619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164972616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1170251113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4057,6 +4562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177361103}
   - component: {fileID: 1177361104}
+  - component: {fileID: 1177361105}
   m_Layer: 0
   m_Name: LightPillar_5
   m_TagString: Untagged
@@ -4131,6 +4637,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1177361105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177361102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1209199002
 GameObject:
   m_ObjectHideFlags: 0
@@ -4221,6 +4739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1256386065}
   - component: {fileID: 1256386066}
+  - component: {fileID: 1256386067}
   m_Layer: 0
   m_Name: LightPillar_0 (1)
   m_TagString: Untagged
@@ -4295,6 +4814,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1256386067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256386064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1310756915
 GameObject:
   m_ObjectHideFlags: 0
@@ -6273,6 +6804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390452082}
   - component: {fileID: 1390452083}
+  - component: {fileID: 1390452084}
   m_Layer: 0
   m_Name: LightPillar_1
   m_TagString: Untagged
@@ -6347,6 +6879,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1390452084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390452081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1395296384
 GameObject:
   m_ObjectHideFlags: 0
@@ -6357,6 +6901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395296385}
   - component: {fileID: 1395296386}
+  - component: {fileID: 1395296387}
   m_Layer: 0
   m_Name: LightPillar_2 (1)
   m_TagString: Untagged
@@ -6431,6 +6976,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1395296387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395296384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1417969109
 GameObject:
   m_ObjectHideFlags: 0
@@ -6441,6 +6998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1417969110}
   - component: {fileID: 1417969111}
+  - component: {fileID: 1417969112}
   m_Layer: 0
   m_Name: LightPillar_4 (1)
   m_TagString: Untagged
@@ -6515,6 +7073,95 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1417969112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417969109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1469480640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469480642}
+  - component: {fileID: 1469480641}
+  m_Layer: 0
+  m_Name: LightPillarRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1469480641
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469480640}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.6905365, y: 0.6310084}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.667698, y: 7.595823}
+  m_EdgeRadius: 0
+--- !u!4 &1469480642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469480640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.23, y: 6.545973, z: -0.8003416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1507306291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31701,6 +32348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614241458}
   - component: {fileID: 1614241459}
+  - component: {fileID: 1614241460}
   m_Layer: 0
   m_Name: LightPillar_0
   m_TagString: Untagged
@@ -31775,6 +32423,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1614241460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614241457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1698774111
 GameObject:
   m_ObjectHideFlags: 0
@@ -31785,6 +32445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1698774112}
   - component: {fileID: 1698774113}
+  - component: {fileID: 1698774114}
   m_Layer: 0
   m_Name: LightPillar_4 (1)
   m_TagString: Untagged
@@ -31859,6 +32520,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1698774114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698774111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1715172732
 GameObject:
   m_ObjectHideFlags: 0
@@ -31869,6 +32542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715172733}
   - component: {fileID: 1715172734}
+  - component: {fileID: 1715172735}
   m_Layer: 0
   m_Name: LightPillar_5 (1)
   m_TagString: Untagged
@@ -31943,6 +32617,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1715172735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715172732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1736876936
 GameObject:
   m_ObjectHideFlags: 0
@@ -31953,6 +32639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736876937}
   - component: {fileID: 1736876938}
+  - component: {fileID: 1736876939}
   m_Layer: 0
   m_Name: LightPillar_3
   m_TagString: Untagged
@@ -32027,6 +32714,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1736876939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736876936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1783128814
 GameObject:
   m_ObjectHideFlags: 0
@@ -32445,6 +33144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916553964}
   - component: {fileID: 1916553965}
+  - component: {fileID: 1916553966}
   m_Layer: 0
   m_Name: LightPillar_5 (1)
   m_TagString: Untagged
@@ -32519,6 +33219,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1916553966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916553963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1926540480
 GameObject:
   m_ObjectHideFlags: 0
@@ -32529,6 +33241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1926540481}
   - component: {fileID: 1926540482}
+  - component: {fileID: 1926540483}
   m_Layer: 0
   m_Name: LightPillar_3
   m_TagString: Untagged
@@ -32603,6 +33316,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1926540483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926540480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1944868707
 GameObject:
   m_ObjectHideFlags: 0
@@ -32613,6 +33338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1944868708}
   - component: {fileID: 1944868709}
+  - component: {fileID: 1944868710}
   m_Layer: 0
   m_Name: LightPillar_0 (1)
   m_TagString: Untagged
@@ -32687,6 +33413,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1944868710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944868707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1958824298
 GameObject:
   m_ObjectHideFlags: 0
@@ -32697,6 +33435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1958824299}
   - component: {fileID: 1958824300}
+  - component: {fileID: 1958824301}
   m_Layer: 0
   m_Name: LightPillar_2 (1)
   m_TagString: Untagged
@@ -32771,6 +33510,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1958824301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958824298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1969768867
 GameObject:
   m_ObjectHideFlags: 0
@@ -32781,6 +33532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1969768868}
   - component: {fileID: 1969768869}
+  - component: {fileID: 1969768870}
   m_Layer: 0
   m_Name: LightPillar_0
   m_TagString: Untagged
@@ -32855,6 +33607,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1969768870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969768867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1983619091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32985,6 +33749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1983952725}
   - component: {fileID: 1983952726}
+  - component: {fileID: 1983952727}
   m_Layer: 0
   m_Name: LightPillar_2
   m_TagString: Untagged
@@ -33059,6 +33824,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1983952727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983952724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1989064066
 GameObject:
   m_ObjectHideFlags: 0
@@ -33069,6 +33846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1989064067}
   - component: {fileID: 1989064068}
+  - component: {fileID: 1989064069}
   m_Layer: 0
   m_Name: LightPillar_3 (1)
   m_TagString: Untagged
@@ -33143,6 +33921,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1989064069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989064066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185132d49e68da840a26121f4634a8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!213 &2046959645
 Sprite:
   m_ObjectHideFlags: 0
@@ -33387,11 +34177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 253681217440528860, guid: 0a359b7ae0a348b4a8cc92cfbbbddc40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.33
+      value: -10.48
       objectReference: {fileID: 0}
     - target: {fileID: 253681217440528860, guid: 0a359b7ae0a348b4a8cc92cfbbbddc40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.57
+      value: 7.42
       objectReference: {fileID: 0}
     - target: {fileID: 253681217440528860, guid: 0a359b7ae0a348b4a8cc92cfbbbddc40, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33520,11 +34310,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8101090625806244102, guid: 27ba885548d4b9f46b338f656da27b49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.33
+      value: -10.48
       objectReference: {fileID: 0}
     - target: {fileID: 8101090625806244102, guid: 27ba885548d4b9f46b338f656da27b49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.57
+      value: 7.42
       objectReference: {fileID: 0}
     - target: {fileID: 8101090625806244102, guid: 27ba885548d4b9f46b338f656da27b49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33577,11 +34367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8960233565022991225, guid: 681039a2c76d8cb46905061c1d2e16da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.33
+      value: -10.48
       objectReference: {fileID: 0}
     - target: {fileID: 8960233565022991225, guid: 681039a2c76d8cb46905061c1d2e16da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.57
+      value: 7.42
       objectReference: {fileID: 0}
     - target: {fileID: 8960233565022991225, guid: 681039a2c76d8cb46905061c1d2e16da, type: 3}
       propertyPath: m_LocalPosition.z
