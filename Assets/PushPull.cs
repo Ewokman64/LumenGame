@@ -1,36 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PushPull : MonoBehaviour
 {
-    public float interactionDistance = 0.3f;
-    private bool interacting;
+    public KeyCode grabKey = KeyCode.G;
+    private bool isGrabbing = false;
+    private GameObject grabbedObject;
 
-    private Rigidbody2D[] pushPullObjects;
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        pushPullObjects = GameObject.FindGameObjectsWithTag("Light")
-                          .Select(obj => obj.GetComponent<Rigidbody2D>())
-                          .ToArray();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(grabKey))
         {
-            foreach (var obj in pushPullObjects)
-            {
-                if (Vector3.Distance(transform.position, obj.transform.position) <= interactionDistance)
-                {
-                    // Player is close enough to interact with the object
-                    // Add your push/pull logic here, for example:
-                    Vector3 pushPullDirection = obj.transform.position - transform.position;
-                    obj.AddForce(pushPullDirection.normalized * 1f, ForceMode2D.Force);
-                }
-            }
+            isGrabbing = true;
         }
+        else if (Input.GetKeyUp(grabKey))
+        {
+            isGrabbing = false;
+            ReleaseObject();
+        }
+
+        if (isGrabbing && grabbedObject != null)
+        {
+            // Move the grabbed object based on player's movement
+            Vector2 playerMovement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            grabbedObject.transform.Translate(playerMovement * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (isGrabbing && grabbedObject == null && other.CompareTag("MovableObject"))
+        {
+            grabbedObject = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (grabbedObject != null && other.gameObject == grabbedObject)
+        {
+            grabbedObject = null;
+        }
+    }
+
+    private void ReleaseObject()
+    {
+        grabbedObject = null;
     }
 }
