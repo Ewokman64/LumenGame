@@ -22,7 +22,7 @@ public class Key : MonoBehaviour
             allow = false;
         }
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == ("Key"))
         {
@@ -30,17 +30,4 @@ public class Key : MonoBehaviour
             Destroy(other.gameObject);
         }      
     }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        /*if (other.gameObject.tag == ("PrismRoom") && keyAmount == 3)
-        {
-            SpawnPrism();
-        }*/
-    }
-
-    /*void SpawnPrism()
-    {
-        Instantiate(redPrism, spawnLocation.transform.position, Quaternion.identity);
-    }*/
 }
