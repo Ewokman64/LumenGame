@@ -67,6 +67,7 @@ public class combatScript : MonoBehaviour
         foreach (Collider2D enemyGameObject in enemy)
         {
             Enemy enemyScript = enemyGameObject.GetComponent<Enemy>();
+            if (enemyScript == null) return;
             enemyScript.Damage();
             Debug.Log("DAMAGED");
         }

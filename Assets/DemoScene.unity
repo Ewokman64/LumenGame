@@ -7049,6 +7049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8276337930913282955, guid: 9626259aa0fef234e8af08ba4cc3a9ce, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34295,7 +34299,11 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 253681217440528859, guid: 0a359b7ae0a348b4a8cc92cfbbbddc40, type: 3}
+<<<<<<< Updated upstream
       propertyPath: enemies.m_Bits
+=======
+      propertyPath: isArmed
+>>>>>>> Stashed changes
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 253681217440528860, guid: 0a359b7ae0a348b4a8cc92cfbbbddc40, type: 3}

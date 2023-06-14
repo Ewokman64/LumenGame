@@ -7,11 +7,11 @@ public class Shadowbug : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        IDLE = "ShadowBug_idle";
+        IDLE = "ShadowBug_Idle";
         ATTACK = "Attack_ShadowBug";
         DAMAGED = "Damaged_ShadowBug";
         DEATH = "Death_ShadowBug";
-        currentState = "ShadowBug_idle";
+        currentState = "ShadowBug_Idle";
         gC = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +38,12 @@ public class Shadowbug : Enemy
         {
             Move();
         }
+        else if (currentState == DEATH)
+        {
+            AnimatorStateInfo animInfo = anim.GetCurrentAnimatorStateInfo(0);
+            float NTime = animInfo.normalizedTime;
+            if (NTime > 1.0f) GameObject.Destroy(gameObject);
+        }
 
     }
     void Move()
@@ -52,7 +58,6 @@ public class Shadowbug : Enemy
         if (health <= 0)
         {
             ChangeAnimationState(DEATH);
-            GameObject.Destroy(gameObject);
         }
         else
             ChangeAnimationState(DAMAGED);
