@@ -24,8 +24,8 @@ public abstract class Enemy : MonoBehaviour
     {
         //stop the same animation from interrupting itself
         if (currentState == newState) return;
-
         //play the animation
+        Debug.Log(newState);
         anim.Play(newState);
         //reassign the current state
         currentState = newState;
